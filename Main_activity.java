@@ -84,7 +84,7 @@ public class Main_activity extends Activity implements IOIOLooperProvider, Senso
 	TextView infoip, msg;
 	TextView response;
 	Button buttonConnect;
-	String phoneIpAddress = "169.234." + "29.88";
+	String phoneIpAddress = "169.234." + "92.94";
 
 	boolean redRobot = true; //account for different gear ratios
 	int forwardSpeed;
@@ -709,6 +709,7 @@ public class Main_activity extends Activity implements IOIOLooperProvider, Senso
 						if(m_ioio_thread != null && (m_ioio_thread.get_ir2_reading() < 17
 								|| m_ioio_thread.get_ir1_reading() < 17 || m_ioio_thread.get_ir3_reading() < 17
 								|| (mDetector.getMaxArea()/(mDetector.getCenterX()*mDetector.getCenterY()*4) > .12))) {
+							System.out.println("HELLO lat " +curr_lat + "lon " +curr_lon);
 							server.latitude2server = curr_lat;
 							server.longitude2server = curr_lon;
 							Log.v("app.main", "obstacle reached");
@@ -749,8 +750,9 @@ public class Main_activity extends Activity implements IOIOLooperProvider, Senso
 			else if(m_ioio_thread != null && (m_ioio_thread.get_ir2_reading() < 17 || m_ioio_thread.get_ir1_reading() < 17
 					|| m_ioio_thread.get_ir3_reading() < 17 || (mDetector.getMaxArea()/(mDetector.getCenterX()*mDetector.getCenterY()*4) > .12))) { //might have to change this value
 				//if(curr_loc.distanceTo(dest_loc) <= 25 && m_ioio_thread.get_ir2_reading() < 30 && (mDetector.getMaxArea()/(mDetector.getCenterX()*mDetector.getCenterY()*4) > .01)) //bucket reached
-				server.latitude2server = curr_lat;
-				server.longitude2server = curr_lon;
+				System.out.println("HELLO 1 lat " +curr_lat + "lon " +curr_lon);
+				server.latitude2server = 2;//curr_lat;
+				server.longitude2server = 3; //curr_lon;
 				if(curr_loc.distanceTo(dest_loc) <= 70) { //bucket reached
 					Log.v("app.main", "bucket reached");
 					//backCounter = 5;
@@ -924,6 +926,25 @@ public class Main_activity extends Activity implements IOIOLooperProvider, Senso
 			  }
 		  });
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	/****************************************************** functions from IOIOActivity *********************************************************************************/
 

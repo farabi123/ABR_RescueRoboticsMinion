@@ -97,8 +97,11 @@ public class Server {
         public void run() {
             OutputStream outputStream;
 
-
-            String msgReply = "From minion: " + "lat: "+latitude2server + "lon: "+longitude2server;
+            String msgReply =
+                    "NAME: " + "CARLOS" + ", " +
+                    "GPS[" + "LAT:" + latitude2server + ", " + "LON:" + longitude2server + "]" +
+                            "MANN: " + true + ", " +
+                            "LGPS[" + "LAT:" + 0 + ", " + "LON:" + 0 + "]";
 
             try {
                 outputStream = hostThreadSocket.getOutputStream();
