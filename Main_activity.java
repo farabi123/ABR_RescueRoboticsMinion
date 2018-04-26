@@ -84,7 +84,7 @@ public class Main_activity extends Activity implements IOIOLooperProvider, Senso
 	TextView infoip, msg;
 	TextView response;
 	Button buttonConnect;
-	String phoneIpAddress = "169.234." + "44.84";
+	String phoneIpAddress = "" + "44.84";
 
 	boolean redRobot = true; //account for different gear ratios
 	int forwardSpeed;
