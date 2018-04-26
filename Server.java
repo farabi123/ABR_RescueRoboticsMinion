@@ -5,6 +5,8 @@ package abr.main;
  */
 
 
+        import android.util.Log;
+
         import java.io.IOException;
         import java.io.OutputStream;
         import java.io.PrintStream;
@@ -99,13 +101,14 @@ public class Server {
 
             String msgReply =
                     "NAME: " + "CARLOS" + ", " +
-                    "GPS[" + "LAT:" + latitude2server + ", " + "LON:" + longitude2server + "]" +
+                    "GPS[" + "LAT:" + latitude2server + ", " + "LON:" + longitude2server + "]" + ", " +
                             "MANN: " + true + ", " +
-                            "LGPS[" + "LAT:" + 0 + ", " + "LON:" + 0 + "]";
+                            "LGPS[" + "LAT:" + 13.555 + ", " + "LON:" + 117.85 + "]";
 
             try {
                 outputStream = hostThreadSocket.getOutputStream();
                 PrintStream printStream = new PrintStream(outputStream);
+                Log.i("app.main.server","message: "+msgReply+"\n");
                 printStream.print(msgReply);
                 printStream.close();
 

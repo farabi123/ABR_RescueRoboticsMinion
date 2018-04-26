@@ -84,7 +84,7 @@ public class Main_activity extends Activity implements IOIOLooperProvider, Senso
 	TextView infoip, msg;
 	TextView response;
 	Button buttonConnect;
-	String phoneIpAddress = "169.234." + "105.154";
+	String phoneIpAddress = "169.234." + "44.84";
 
 	boolean redRobot = true; //account for different gear ratios
 	int forwardSpeed;
@@ -120,7 +120,7 @@ public class Main_activity extends Activity implements IOIOLooperProvider, Senso
 	private LocationListener mLocationListener;
 	Location dest_loc;
 	float distance = 0;
-	
+
 	//variables for compass
 	private SensorManager mSensorManager;
 	private Sensor mCompass, mAccelerometer;
